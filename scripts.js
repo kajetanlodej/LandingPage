@@ -33,7 +33,7 @@ makeSyncingRequest()
         if (data.result.syncing) {
             // Check if 'currentBlock' and 'highestBlock' are both not 0 and 'currentBlock' is less than 'highestBlock'
             if (data.result.currentBlock !== 0 && data.result.highestBlock !== 0 && data.result.currentBlock < data.result.highestBlock) {
-                $("#RPC").html('Synchronizing (' + (parseInt(data.result.highestBlock) - parseInt(data.result.currentBlock))  + ' block(s) left)').css('color', '#ff9300');;
+                $("#RPC").html('Synchronizing (' + (parseInt(data.result.highestBlock) - parseInt(data.result.currentBlock)) + ' block(s) left)').css('color', '#ff9300');;
             } else {
                 $("#RPC").html('Synchronizing').css('color', '#ff9300');;
             }
@@ -45,48 +45,48 @@ makeSyncingRequest()
     .catch(error => {
         console.error('Error:', error);
         // Display "Offline" if an error is thrown
-        $("#RPC").html('Offline').css('color',' #e62e00');
+        $("#RPC").html('Offline').css('color', ' #e62e00');
     });
-    function handleRefreshClick() {
-// Call the makeSyncingRequest() function
-makeSyncingRequest()
-.then(data => {
-    console.log(data);
-    // Check if 'syncing' field is true
-    if (data.result.syncing) {
-        // Check if 'currentBlock' and 'highestBlock' are both not 0 and 'currentBlock' is less than 'highestBlock'
-        if (data.result.currentBlock !== 0 && data.result.highestBlock !== 0 && data.result.currentBlock < data.result.highestBlock) {
-            $("#RPC").html('Synchronizing (' + (parseInt(data.result.highestBlock) - parseInt(data.result.currentBlock)) + ' block(s) left)').css('color', 'black');
+function handleRefreshClick() {
+    // Call the makeSyncingRequest() function
+    makeSyncingRequest()
+        .then(data => {
+            console.log(data);
+            // Check if 'syncing' field is true
+            if (data.result.syncing) {
+                // Check if 'currentBlock' and 'highestBlock' are both not 0 and 'currentBlock' is less than 'highestBlock'
+                if (data.result.currentBlock !== 0 && data.result.highestBlock !== 0 && data.result.currentBlock < data.result.highestBlock) {
+                    $("#RPC").html('Synchronizing (' + (parseInt(data.result.highestBlock) - parseInt(data.result.currentBlock)) + ' block(s) left)').css('color', 'black');
+                    setTimeout(function () {
+                        $("#RPC").css('color', '#ff9300');
+                    }, 350);
+
+                } else {
+                    $("#RPC").html('Synchronizing').css('color', 'black');
+
+                    setTimeout(function () {
+                        $("#RPC").css('color', '#ff9300');
+                    }, 350);
+
+                }
+            } else {
+                // Display "Online" if 'syncing' is false
+                $("#RPC").html('Online').css('color', 'black');
+                setTimeout(function () {
+                    $("#RPC").css('color', 'green');
+                }, 350);
+            }
+
+
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Display "Offline" if an error is thrown
+            $("#RPC").html('Offline').css('color', 'black');
             setTimeout(function () {
-            $("#RPC").css('color', '#ff9300');
-    }, 350);
-            
-        } else {
-            $("#RPC").html('Synchronizing').css('color', 'black');
-
-            setTimeout(function () {
-            $("#RPC").css('color', '#ff9300');
-    }, 350);
-
-        }
-    } else {
-        // Display "Online" if 'syncing' is false
-        $("#RPC").html('Online').css('color', 'black');
-        setTimeout(function () {
-        $("#RPC").css('color', 'green');
-    }, 350);
-    }
-
-
-})
-.catch(error => {
-    console.error('Error:', error);
-    // Display "Offline" if an error is thrown
-    $("#RPC").html('Offline').css('color', 'black');
-    setTimeout(function () {
-        $("#RPC").css('color', '#e62e00');
-    }, 350);
-});
+                $("#RPC").css('color', '#e62e00');
+            }, 350);
+        });
 }
 
 $(document).on('click', '#reload', handleRefreshClick);

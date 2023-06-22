@@ -1,57 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400;500;600;700;800&display=swap');
 
-        body {
-            background-image: url(content/background.png);
-            background-repeat: repeat;
-            background-size: 15%;
-            height: 100vh;
-            margin: 0px;
-        }
+body {
+    background-image: url(content/background.png);
+    background-repeat: repeat;
+    background-size: 15%;
+    height: 100vh;
+    margin: 0px;
+}
 
-        .main {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-        .idenanode span {
-            font-family: 'Prompt', sans-serif;
-            font-size: 4vh;
-            font-weight: 600;
-        }
+.idenanode span {
+    font-family: 'Prompt', sans-serif;
+    font-size: 4vh;
+    font-weight: 600;
+}
 
-        .status span {
-            font-family: 'Prompt', sans-serif;
-            font-size: 3vh;
-            font-weight: 600;
-        }
+.status span {
+    font-family: 'Prompt', sans-serif;
+    font-size: 3vh;
+    font-weight: 600;
+}
 
-        .status {
-            display: flex;
-            align-items: center;
-        }
+.status {
+    display: flex;
+    align-items: center;
+}
 
-        .status span {
-            padding: 10px;
-        }
+.status span {
+    padding: 10px;
+}
 
-        .rotate-animation {
-            animation: rotateAnimation 0.5s;
-        }
-        #RPC{
-            font-family: 'Prompt', sans-serif;
-            font-weight: 700;
-            font-size:5vh;
-        }
+.rotate-animation {
+    animation: rotateAnimation 0.5s;
+}
 
-        @keyframes rotateAnimation {
-            from {
-                transform: rotate(0deg);
-            }
+#RPC {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
+    font-size: 5vh;
+}
 
-            to {
-                transform: rotate(360deg);
-            }
-        }
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
