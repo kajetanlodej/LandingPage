@@ -64,3 +64,17 @@ body {
         transform: rotate(360deg);
     }
 }
+
+.idenanode{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 800px) {
+    .idenanode{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
