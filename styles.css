@@ -18,7 +18,7 @@ body {
 
 .idenanode span {
     font-family: 'Prompt', sans-serif;
-    font-size: 4vh;
+    font-size: 5.5vh;
     font-weight: 600;
 }
 
@@ -41,10 +41,18 @@ body {
     animation: rotateAnimation 0.5s;
 }
 
+#idena_black {
+    height: 40vh;
+}
+
 #RPC {
     font-family: 'Prompt', sans-serif;
     font-weight: 700;
     font-size: 5vh;
+}
+
+#reload {
+    height: 3vh;
 }
 
 @keyframes rotateAnimation {
