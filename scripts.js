@@ -16,7 +16,7 @@ function makeSyncingRequest() {
         method: 'bcn_syncing',
         params: [],
         id: 1,
-        key: '1Solon1',
+        key: '22ref1stat122',
     };
 
     return axios.post(rpcEndpoint, payload)
